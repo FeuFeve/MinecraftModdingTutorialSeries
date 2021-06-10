@@ -1,5 +1,6 @@
 package com.feufeve.mccourse;
 
+import com.feufeve.mccourse.block.ModBlocks;
 import com.feufeve.mccourse.item.ModItems;
 import com.feufeve.mccourse.util.Registration;
 import net.minecraft.block.Block;
@@ -32,6 +33,7 @@ public class MCCourseMod {
     public MCCourseMod() {
         Registration.register();
         ModItems.register();
+        ModBlocks.register();
 
         // Register the setup method for modloading
         FMLJavaModLoadingContext.get().getModEventBus().addListener(this::setup);
@@ -54,7 +56,7 @@ public class MCCourseMod {
 
     private void doClientStuff(final FMLClientSetupEvent event) {
         // do something that can only be done on the client
-        LOGGER.info("Got game settings {}", event.getMinecraftSupplier().get().options);
+        LOGGER.info("Got game settings {}", event.getMinecraftSupplier().get().gameSettings);
     }
 
     private void enqueueIMC(final InterModEnqueueEvent event) {

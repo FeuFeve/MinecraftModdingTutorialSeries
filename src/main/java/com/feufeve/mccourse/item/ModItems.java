@@ -8,7 +8,7 @@ import net.minecraftforge.fml.RegistryObject;
 public class ModItems {
 
     public static final RegistryObject<Item> COPPER_INGOT = Registration.ITEMS.register("copper_ingot",
-            () -> new Item(new Item.Properties().tab(ItemGroup.TAB_MATERIALS)));
+            () -> new Item(new Item.Properties().group(ItemGroup.MATERIALS)));
 
     public static void register() { }
 }
