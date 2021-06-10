@@ -1,5 +1,6 @@
 package com.feufeve.mccourse.block;
 
+import com.feufeve.mccourse.MCCourseMod;
 import com.feufeve.mccourse.util.Registration;
 import net.minecraft.block.AbstractBlock;
 import net.minecraft.block.Block;
@@ -31,7 +32,7 @@ public class ModBlocks {
     private static <T extends Block> RegistryObject<T> register(String name, Supplier<T> block) {
         RegistryObject<T> toReturn = Registration.BLOCKS.register(name, block);
         Registration.ITEMS.register(name,
-                () -> new BlockItem(toReturn.get(), new Item.Properties().group(ItemGroup.BUILDING_BLOCKS)));
+                () -> new BlockItem(toReturn.get(), new Item.Properties().group(MCCourseMod.COURSE_TAB)));
         return toReturn;
     }
 }
