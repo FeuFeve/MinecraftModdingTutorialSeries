@@ -1,5 +1,7 @@
 package com.feufeve.mccourse;
 
+import com.feufeve.mccourse.item.ModItems;
+import com.feufeve.mccourse.util.Registration;
 import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
 import net.minecraftforge.common.MinecraftForge;
@@ -28,6 +30,9 @@ public class MCCourseMod {
     private static final Logger LOGGER = LogManager.getLogger();
 
     public MCCourseMod() {
+        Registration.register();
+        ModItems.register();
+
         // Register the setup method for modloading
         FMLJavaModLoadingContext.get().getModEventBus().addListener(this::setup);
         // Register the enqueueIMC method for modloading
