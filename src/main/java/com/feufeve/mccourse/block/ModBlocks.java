@@ -19,13 +19,13 @@ public class ModBlocks {
     public static final RegistryObject<Block> COPPER_BLOCK = register("copper_block",
             () -> new Block(AbstractBlock.Properties.create(Material.IRON)
                     .hardnessAndResistance(3f, 10f)
+                    .harvestTool(ToolType.PICKAXE).setRequiresTool()
                     .sound(SoundType.METAL)));
     public static final RegistryObject<Block> COPPER_ORE = register("copper_ore",
             () -> new Block(AbstractBlock.Properties.create(Material.ROCK)
                     .hardnessAndResistance(3f, 10f)
-                    .sound(SoundType.STONE)
-                    .harvestLevel(2)
-                    .harvestTool(ToolType.PICKAXE)));
+                    .harvestLevel(2).harvestTool(ToolType.PICKAXE).setRequiresTool()
+                    .sound(SoundType.STONE)));
 
     public static void register() { }
 
